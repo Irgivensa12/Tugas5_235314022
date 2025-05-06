@@ -57,3 +57,15 @@ function hapus($id) {
     mysqli_query($db, "DELETE FROM users WHERE id = $id"); // query untuk menghapus data dari tabel users berdasarkan id
     return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
 }
+
+function tambah($data) {
+    global $db; 
+    $username = htmlspecialchars($data["username"]); // htmlspecialchars untuk menghindari XSS (Cross-Site Scripting)
+    $password = htmlspecialchars($data["password"]);
+
+// query untuk menambahkan data ke dalam tabel users
+$query = "INSERT INTO users VALUES ('', '$username', '$password')"; // kolom id kosongkan krn otomats
+mysqli_query($db, $query); // eksekusi query
+
+return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+}
