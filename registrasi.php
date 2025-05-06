@@ -8,7 +8,7 @@ if(isset($_POST["register"])) {
     if(register($_POST) > 0) {
         echo "<script>
                 alert('User baru berhasil ditambahkan!');
-                document.location.href = 'admin.php'; 
+                document.location.href = 'index.php'; 
             </script>"; // jika berhasil, kembali ke halaman admin.php
 }
     else {
