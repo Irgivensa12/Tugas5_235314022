@@ -58,7 +58,7 @@ function hapus($id) {
     return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
 }
 
-function tambah($data) {
+function tambah($data) { // variabel data utk menampung data POST yg dikirimkan
     global $db; 
     $username = htmlspecialchars($data["username"]); // htmlspecialchars untuk menghindari XSS (Cross-Site Scripting)
     $password = htmlspecialchars($data["password"]);
@@ -68,4 +68,21 @@ $query = "INSERT INTO users VALUES ('', '$username', '$password')"; // kolom id 
 mysqli_query($db, $query); // eksekusi query
 
 return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+}
+
+function edit($data) {
+    global $db; // mengglobalkan variabel db agar bisa digunakan dalam function
+    $id = $data["id"]; // mengambil id dari data yang dikirim
+    $username = htmlspecialchars($data["username"]); // htmlspecialchars untuk menghindari XSS (Cross-Site Scripting)
+    $password = htmlspecialchars($data["password"]); // htmlspecialchars untuk menghindari XSS (Cross-Site Scripting)
+
+    // query untuk menambahkan data ke dalam tabel users
+$query = "UPDATE users SET 
+        username = '$username', 
+        password = '$password' 
+        WHERE id = $id"; // kolom id kosongkan krn otomats
+mysqli_query($db, $query); // eksekusi query
+
+return mysqli_affected_rows($db); // kembalikan angka ketika ada data yg diupdate
+
 }

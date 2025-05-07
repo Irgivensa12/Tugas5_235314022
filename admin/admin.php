@@ -37,7 +37,7 @@ $users = query("SELECT * FROM users"); // query untuk menampilkan data dari tabe
         <td><?= $row["username"];?></td>
         <td><?= $row["password"];?></td>
         <td><a href="hapus.php?id=<?= $row["id"];?>" onclick="return confirm('Apakah Anda Ingin menghapus user ini?');">Hapus</a>
-        <a href="">Edit</a></td>
+        <a href="edit.php?id=<?= $row["id"];?>">Edit</a></td>
     </tr>
     <?php $i++; ?>
     <?php  endforeach; ?>
