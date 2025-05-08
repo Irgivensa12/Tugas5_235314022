@@ -26,7 +26,7 @@ if (isset($_GET['selesai'])) {
 
 // jika tombol hapus ditekan
 if (isset($_GET['hapus'])) {
-    hapusTodo($conn, $user_id, $_GET['hapus']);
+    hapusTodo($user_id, $_GET['hapus']);
     header("Location: index.php");
     exit;
 }
@@ -57,7 +57,7 @@ if (isset($_GET['hapus'])) {
         <?php foreach ($todos as $todo): ?> 
             <!-- looping untuk menampilkan semua tugas -->
             <li>
-                <?= htmlspecialchars($todo['task']) ?> 
+                <?= htmlspecialchars($todo['tugas']) ?> 
                 <!-- menampilkan isi kolom tugas -->
                 <?= $todo['status'] === 'belum' ? "<a href='?selesai={$todo['id']}'>Selesai</a>" : "<span style='color:green;'>(Selesai)</span>" ?>
                 <a href="?hapus=<?= $todo['id'] ?>">Hapus</a>

@@ -89,7 +89,7 @@ return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh
 function tambahTodo($user_id, $tugas) {
     global $db;
     $tugas = htmlspecialchars($tugas);
-    mysqli_query($db, "INSERT INTO todos (user_id, task, status) VALUES ($user_id, '$tugas', 'belum')");
+    mysqli_query($db, "INSERT INTO todos (user_id, tugas, status) VALUES ($user_id, '$tugas', 'belum')");
     return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
 }
 
