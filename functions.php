@@ -83,6 +83,24 @@ $query = "UPDATE users SET
         WHERE id = $id"; // kolom id kosongkan krn otomats
 mysqli_query($db, $query); // eksekusi query
 
-return mysqli_affected_rows($db); // kembalikan angka ketika ada data yg diupdate
+return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+}
 
+function tambahTodo($user_id, $tugas) {
+    global $db;
+    $tugas = htmlspecialchars($tugas);
+    mysqli_query($db, "INSERT INTO todos (user_id, task, status) VALUES ($user_id, '$tugas', 'belum')");
+    return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+}
+
+function selesaiTodo($user_id, $id) {
+    global $db;
+    mysqli_query($db, "UPDATE todos SET status = 'selesai' WHERE id = $id AND user_id = $user_id");
+    return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+}
+
+function hapusTodo($user_id, $id) {
+    global $db;
+    mysqli_query($db, "DELETE FROM todos WHERE id = $id AND user_id = $user_id");
+    return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
 }

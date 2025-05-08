@@ -1,7 +1,7 @@
 <?php 
 session_start(); // memulai session agar bisa menggunakan session
 
-if(isset($_SESSION["login"])) { // jika session login sudah ada
+if(isset($_SESSION["login"])  && isset($_SESSION["user_id"])) { // jika session login sudah ada
     header("Location: index.php"); // redirect ke halaman admin
     exit; // hentikan script
 }
@@ -24,7 +24,8 @@ if(isset($_POST["login"])) {
         
         // set session
         $_SESSION["login"] = true; // cek session login di tiap halaman
-        $loginSuccess = true; // jika login berhasil, set session login menjadi true
+        //$loginSuccess = true; // jika login berhasil, set session login menjadi true
+        $_SESSION["user_id"] = $row["id"];
         header("Location: index.php"); // jika password benar, redirect ke halaman index
     exit; // hentikan script
     } 
@@ -63,7 +64,7 @@ if(isset($_POST["login"])) {
             <input type="password" name="password" id="password" required>
         </li>
         <li>
-            <button type="submit" name="login">Login</button>
+            <button type="submit" name="login">Submit</button>
         </li>
     </ul>
 </form>
