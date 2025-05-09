@@ -59,7 +59,16 @@ if (isset($_GET['hapus'])) {
             <li>
                 <?= htmlspecialchars($todo['tugas']) ?> 
                 <!-- menampilkan isi kolom tugas -->
-                <?= $todo['status'] === 'belum' ? "<a href='?selesai={$todo['id']}'>Selesai</a>" : "<span style='color:green;'>(Selesai)</span>" ?>
+                <span class="<?= $todo['status'] === 'selesai' ? 'task-selesai' : '' ?>"> 
+                    <!-- menampilkan status tugas -->
+                <?= htmlspecialchars($todo['tugas']) ?>
+            </span>
+
+            <?php if ($todo['status'] === 'belum'): ?>
+                <a href="?selesai=<?= $todo['id'] ?>">Selesai</a>
+            <?php else: ?>
+                <button disabled style="color:gray; cursor: not-allowed;">Selesai</button>
+            <?php endif; ?>
                 <a href="?hapus=<?= $todo['id'] ?>">Hapus</a>
             </li>
         <?php endforeach; ?>
