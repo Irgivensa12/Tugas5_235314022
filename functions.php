@@ -89,13 +89,13 @@ return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh
 function tambahTodo($user_id, $tugas) {
     global $db;
     $tugas = htmlspecialchars($tugas);
-    mysqli_query($db, "INSERT INTO todos (user_id, tugas, status) VALUES ($user_id, '$tugas', 'belum')");
+    mysqli_query($db, "INSERT INTO todos (user_id, tugas, status) VALUES ($user_id, '$tugas', 1)"); // 1 = belum selesai (setting default enum "belum")
     return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
 }
 
 function selesaiTodo($user_id, $id) {
     global $db;
-    mysqli_query($db, "UPDATE todos SET status = 'selesai' WHERE id = $id AND user_id = $user_id");
+    mysqli_query($db, "UPDATE todos SET status = 'selesai' WHERE id = $id AND user_id = $user_id"); 
     return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
 }
 
@@ -103,4 +103,18 @@ function hapusTodo($user_id, $id) {
     global $db;
     mysqli_query($db, "DELETE FROM todos WHERE id = $id AND user_id = $user_id");
     return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+}
+
+function toggleToDo($user_id, $id){
+    global $db;
+    // ambil status sekarang
+    $query = mysqli_query($db, "SELECT status FROM todos WHERE id = $id AND user_id = $user_id");
+    $data = mysqli_fetch_assoc($query);
+    $current = $data['status'] ?? 'belum'; // jika null, anggap belum
+    
+    // toggle status
+    $new = $current === 'selesai' ? 1 : 2;
+
+    // update ke database
+    mysqli_query($db, "UPDATE todos SET status = '$new' WHERE id = $id AND user_id = $user_id");
 }

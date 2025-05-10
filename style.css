@@ -1,0 +1,7 @@
+.task-selesai{  /* mengedit class task-selesai agar ketika button selesai di tekan, to do list tercoret */
+    text-decoration: line-through;
+    color: black;
+}
+body {
+    background-color: lightyellow;
+}

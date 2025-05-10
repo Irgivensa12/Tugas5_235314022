@@ -30,6 +30,13 @@ if (isset($_GET['hapus'])) {
     header("Location: index.php");
     exit;
 }
+
+// jika tombol toggle ditekan
+if (isset($_GET['toggle'])) {
+    toggleToDo($user_id, $_GET['toggle']);
+    header("Location: index.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +45,13 @@ if (isset($_GET['hapus'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Utama</title>
+
+    <style>
+.task-selesai {
+    text-decoration: line-through;
+    color: gray;
+}
+</style>
 </head>
 <body>
 <header>
@@ -56,19 +70,11 @@ if (isset($_GET['hapus'])) {
     <ul>
         <?php foreach ($todos as $todo): ?> 
             <!-- looping untuk menampilkan semua tugas -->
-            <li>
-                <?= htmlspecialchars($todo['tugas']) ?> 
-                <!-- menampilkan isi kolom tugas -->
-                <span class="<?= $todo['status'] === 'selesai' ? 'task-selesai' : '' ?>"> 
-                    <!-- menampilkan status tugas -->
-                <?= htmlspecialchars($todo['tugas']) ?>
-            </span>
-
-            <?php if ($todo['status'] === 'belum'): ?>
-                <a href="?selesai=<?= $todo['id'] ?>">Selesai</a>
-            <?php else: ?>
-                <button disabled style="color:gray; cursor: not-allowed;">Selesai</button>
-            <?php endif; ?>
+            <li class="<?= $todo['status'] === 'selesai' ? 'task-selesai' : '' ?>">
+            <?= htmlspecialchars($todo['tugas']) ?> 
+                <a href="?toggle=<?= $todo['id'] ?>">
+                    <?= $todo['status'] === 'selesai' ? 'Batal' : 'Selesai' ?>
+                </a>
                 <a href="?hapus=<?= $todo['id'] ?>">Hapus</a>
             </li>
         <?php endforeach; ?>
