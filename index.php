@@ -45,26 +45,20 @@ if (isset($_GET['toggle'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Utama</title>
-
-    <style>
-.task-selesai {
-    text-decoration: line-through;
-    color: gray;
-}
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
+        <img src="AkuPDD.jpg" alt="Diriku" width="100">
         <h2>Kristoforus Irgivensa Arielino</h2>
         <h3>235314022</h3>
-        <img src="AkuPDD.jpg" alt="Diriku" width="100">
-        <p><a href="logout.php">Logout</a></p>
+        <p><a href="logout.php" class="logout">Logout</a></p>
     </header>
 
-    <h1>To Do List</h1>
-    <form action="" method="post">
+    <h1 class="todo">To Do List</h1>
+    <form action="" class="tugas" method="post">
         <input type="text" name="tugas" placeholder="Tugas baru" required>
-        <button type="submit" name="tambah">Tambah</button>
+        <button type="submit" name="tambah" class="tambah">Tambah</button>
     </form>
 
     <ul>

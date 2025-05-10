@@ -1,3 +1,7 @@
+body{
+    background-image: url('asanoha-400px.png');
+}
+
 .task-selesai{  /* mengedit class task-selesai agar ketika button selesai di tekan, to do list tercoret */
     text-decoration: line-through;
     color: black;
@@ -55,8 +59,50 @@ button:hover {
 a {
     text-decoration: none; /* menghilangkan garis bawah pada link */
     color: #007bff; /* mengatur warna link */
+    font-size: 18px; /* mengatur ukuran font link */
 }
 
 a:hover {
     text-decoration: underline; /* menambah garis bawah pada link saat di hover */
+}
+
+img{
+    display: block; /* menampilkan gambar dalam satu baris */
+    margin: 0 auto; /* memposisikan gambar di tengah halaman */
+    padding-top: 30px; /* menambah jarak atas gambar */
+    width: 200px;
+    height: 150px;
+}
+
+h2{
+    font-family: Sans-serif;
+    margin-top: 20px;
+    text-align: center; /* memposisikan teks di tengah */
+}
+h3{
+    font-family: Sans-serif;
+    margin-top: 20px;
+    text-align: center; /* memposisikan teks di tengah */
+}
+
+.logout{
+    display: block; /* menampilkan gambar dalam satu baris */
+    margin: auto; /* memposisikan gambar di tengah halaman */
+    width: 200px;
+    height: 150px;
+    
+}
+h1.todo{
+    text-align: center; /* memposisikan teks di tengah */
+}
+
+button.tambah {
+    padding: 10px 15px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px; /* membulatkan sudut button */
+    cursor: pointer;
+    display: block;
+    margin: 0 auto; /* memposisikan button di tengah halaman */
 }
