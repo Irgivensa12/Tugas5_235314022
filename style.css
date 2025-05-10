@@ -2,6 +2,61 @@
     text-decoration: line-through;
     color: black;
 }
-body {
-    background-color: lightyellow;
+
+h1{
+font-family: Sans-serif;
+margin-top: 20px;
+}
+
+
+form {
+    background-color: white;
+    max-width: 400px;  /* mensetting lebar form */ 
+    padding: 20px; /* menambah jarak dalam form */
+    border-radius: 10px; /* membulatkan sudut form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* menambah bayangan pada form */
+    margin: auto; /* memposisikan form di tengah halaman */
+}
+
+ul {
+    list-style: none; /* menghilangkan titik bulat pada list */
+    padding: 0; /* menghilangkan padding pada list */
+}
+
+li {
+    margin-bottom: 15px; /* menambah jarak antar list */
+}
+
+label {
+    display: block;  /* menampilkan label dalam satu baris */
+    margin-bottom: 5px;
+}
+
+input[type="text"], /* memilih semua elemen <input> yang bertipe text */
+input[type="password"] {  /* memilih semua elemen <input> yang bertipe password  */
+    width: 100%; /* mengatur lebar input menjadi 100% dari elemen induknya */
+    padding: 8px; /* menambah jarak dalam input */
+    box-sizing: border-box; /* mengatur ukuran elemen termasuk padding dan border */
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px; /* membulatkan sudut button */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* mengubah warna button saat di hover */
+}
+
+a {
+    text-decoration: none; /* menghilangkan garis bawah pada link */
+    color: #007bff; /* mengatur warna link */
+}
+
+a:hover {
+    text-decoration: underline; /* menambah garis bawah pada link saat di hover */
 }

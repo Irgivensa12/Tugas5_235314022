@@ -42,6 +42,7 @@ if(isset($_POST["login"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Login</h1>
@@ -67,7 +68,7 @@ if(isset($_POST["login"])) {
             <button type="submit" name="login">Submit</button>
         </li>
         <li>
-            <p><a href="register.php">Register Now!</a></p>
+            <p><a href="registrasi.php">Register Now!</a></p>
         </li>
     </ul>
 </form>
