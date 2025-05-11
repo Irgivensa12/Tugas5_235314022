@@ -44,7 +44,7 @@ function register($data) {
 
 function query($query) {
     global $db; // mengglobalkan variabel db agar bisa digunakan dalam function
-    $result = mysqli_query($GLOBALS['db'], $query);
+    $result = mysqli_query($db, $query);
     $rows = []; // array kosong untuk menampung data yang diambil dari database
     while ($row = mysqli_fetch_assoc($result)) { // mengambil data dari database
         $rows[] = $row; // menambahkan data ke dalam array
@@ -54,7 +54,8 @@ function query($query) {
 
 function hapus($id) {
     global $db; // mengglobalkan variabel db agar bisa digunakan dalam function
-    mysqli_query($db, "DELETE FROM users WHERE id = $id"); // query untuk menghapus data dari tabel users berdasarkan id
+    $query = "DELETE FROM users WHERE id = $id"; // query untuk menghapus data dari tabel users berdasarkan id
+    mysqli_query($db, $query); // query untuk menghapus data dari tabel users berdasarkan id
     return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
 }
 

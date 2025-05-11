@@ -1,6 +1,12 @@
 <?php 
 require '../functions.php';
-$id = $_GET["id"]; // mengambil id dari url
+// Periksa apakah parameter id ada di URL
+if(!isset($_GET["id"])) {
+    header("Location: admin.php");
+    exit;
+}
+
+$id = $_GET["id"];
 
 if(hapus($id) > 0) { // jika id lebih dari 0, maka hapus data
     echo "<script>

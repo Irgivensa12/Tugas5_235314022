@@ -6,8 +6,7 @@ if(!isset($_SESSION["login"])) { // jika session login belum ada
 }
 require '../functions.php'; // memanggil file functions.php untuk digunakan di halaman tambah.php
 
-// ambil daa di url
-$id = $_GET["id"]; // mengambil id dari url
+$id = $_GET["id"]; // ambil id dari url
 
 // query data user berdasarkan id
 $usr = query("SELECT * FROM users WHERE id = $id")[0]; // query untuk menampilkan data dari tabel user berdasarkan id
@@ -43,7 +42,6 @@ if(isset($_POST["submit"])) {
 
         <ul>
             <input type="hidden" name="id" value="<?= $usr["id"]; ?>"> <!-- hidden untuk menyimpan id user yang akan diedit -->
-            <!-- hidden untuk menyimpan id user yang akan diedit -->
             <li>
                 <label for="username">Username :</label>
                 <input type="text" name="username" id= "username" required value="<?= $usr["username"]; ?>">  
