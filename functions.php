@@ -6,7 +6,7 @@ $db = mysqli_connect("localhost", "root", "", "todo"); // username default = roo
 $result = mysqli_query($db, "SELECT * FROM users"); //query untuk menampilkan data dari tabel user
 
 if(!$result) {
-    echo mysqli_error($db); //jika gagal query untuk menampilkan data, tampilkan error
+    echo mysqli_error($db); // jika gagal query untuk menampilkan data, tampilkan error
 }
 
 function register($data) {
@@ -53,10 +53,10 @@ function query($query) {
 }
 
 function hapus($id) {
-    global $db; // mengglobalkan variabel db agar bisa digunakan dalam function
+    global $db;
     $query = "DELETE FROM users WHERE id = $id"; // query untuk menghapus data dari tabel users berdasarkan id
-    mysqli_query($db, $query); // query untuk menghapus data dari tabel users berdasarkan id
-    return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+    mysqli_query($db, $query);
+    return mysqli_affected_rows($db);
 }
 
 function tambah($data) { // variabel data utk menampung data POST yg dikirimkan
@@ -68,11 +68,11 @@ function tambah($data) { // variabel data utk menampung data POST yg dikirimkan
 $query = "INSERT INTO users VALUES ('', '$username', '$password')"; // kolom id kosongkan krn otomats
 mysqli_query($db, $query); // eksekusi query
 
-return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+return mysqli_affected_rows($db);
 }
 
 function edit($data) {
-    global $db; // mengglobalkan variabel db agar bisa digunakan dalam function
+    global $db;
     $id = $data["id"]; // mengambil id dari data yang dikirim
     $username = htmlspecialchars($data["username"]); // htmlspecialchars untuk menghindari XSS (Cross-Site Scripting)
     $password = htmlspecialchars($data["password"]); // htmlspecialchars untuk menghindari XSS (Cross-Site Scripting)
@@ -84,26 +84,29 @@ $query = "UPDATE users SET
         WHERE id = $id"; // kolom id kosongkan krn otomats
 mysqli_query($db, $query); // eksekusi query
 
-return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+return mysqli_affected_rows($db); 
 }
 
 function tambahTodo($user_id, $tugas) {
     global $db;
     $tugas = htmlspecialchars($tugas);
-    mysqli_query($db, "INSERT INTO todos (user_id, tugas, status) VALUES ($user_id, '$tugas', 1)"); // 1 = belum selesai (setting default enum "belum")
-    return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+    $query = "INSERT INTO todos (user_id, tugas, status) VALUES ($user_id, '$tugas', 'belum')"; // query untuk menambahkan data ke dalam tabel todos, 1 = belum selesai (setting default enum "belum")
+    mysqli_query($db, $query ); 
+    return mysqli_affected_rows($db);
 }
 
 function selesaiTodo($user_id, $id) {
     global $db;
-    mysqli_query($db, "UPDATE todos SET status = 'selesai' WHERE id = $id AND user_id = $user_id"); 
-    return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+    $query = "UPDATE todos SET status = 'selesai' WHERE id = $id AND user_id = $user_id"; // query untuk mengupdate data pada tabel todos
+    mysqli_query($db, $query); 
+    return mysqli_affected_rows($db); 
 }
 
 function hapusTodo($user_id, $id) {
     global $db;
-    mysqli_query($db, "DELETE FROM todos WHERE id = $id AND user_id = $user_id");
-    return mysqli_affected_rows($db); // mengembalikan jumlah baris yang terpengaruh oleh query terakhir
+    $query = "DELETE FROM todos WHERE id = $id AND user_id = $user_id"; // query untuk menghapus data dari tabel todos berdasarkan id
+    mysqli_query($db, $query);
+    return mysqli_affected_rows($db); 
 }
 
 function toggleToDo($user_id, $id){
