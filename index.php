@@ -62,17 +62,22 @@ if (isset($_GET['toggle'])) {
     </form>
 
     <ul>
-        <?php foreach ($todos as $todo): ?> 
-            <!-- looping untuk menampilkan semua tugas -->
-            <li class="<?= $todo['status'] === 'selesai' ? 'task-selesai' : '' ?>">
-            <?= htmlspecialchars($todo['tugas']) ?> 
-                <a href="?toggle=<?= $todo['id'] ?>">
-                    <?= $todo['status'] === 'selesai' ? 'Batal' : 'Selesai' ?>
-                </a>
-                <a href="?hapus=<?= $todo['id'] ?>">Hapus</a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-
+    <?php foreach ($todos as $todo): ?> 
+        <?php
+        $status = trim(strtolower(str_replace("'", "", $todo['status'])));
+        ?>
+        <li class="todo-item <?= $status === 'selesai' ? 'task-selesai' : '' ?>">
+            <span class="todo-text"><?= htmlspecialchars($todo['tugas']) ?></span>
+            <div class="todo-actions">
+                <?php if ($status === 'selesai'): ?>
+                    <a class="btn selesai disabled">Selesai</a>
+                <?php else: ?>
+                    <a href="?toggle=<?= $todo['id'] ?>" class="btn selesai">Selesai</a>
+                <?php endif; ?>
+                <a href="?hapus=<?= $todo['id'] ?>" class="btn hapus">Hapus</a>
+            </div>
+        </li>
+    <?php endforeach; ?>
+</ul>
 </body>
 </html>

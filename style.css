@@ -16,15 +16,6 @@ form {
     margin: auto; /* memposisikan form di tengah halaman */
 }
 
-ul {
-  list-style: none; /* menghilangkan titik bulat pada list */
-  padding: 0; /* menghilangkan padding pada list */
-}
-
-li {
-  margin-bottom: 15px; /* menambah jarak antar list */
-}
-
 label {
     display: block; /* menampilkan label dalam satu baris */
     margin-bottom: 5px;
@@ -81,51 +72,106 @@ h3 {
 }
 
 .logout {
-    display: block; /* menampilkan gambar dalam satu baris */
-    margin: auto; /* memposisikan gambar di tengah halaman */
-    width: 200px;
-    height: 150px;
+    display: block;
+    text-align: center;
+    margin: 10px auto;
 }
+
 h1.todo {
   text-align: center; /* memposisikan teks di tengah */
 }
 
 form.tugas {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    gap: 10px;
     background-color: white;
     padding: 20px;
-    max-width: 400px;
+    max-width: 600px;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 form.tugas input[type="text"] {
-    width: 100%;
-    margin-bottom: 10px;
+    flex: 1;
     padding: 10px;
+    font-size: 16px;
 }
 
-button.tambah {
-    padding: 10px 15px;
-    background-color: blue;
-    color: white;
+form.tugas button.tambah {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
     border: none;
-    border-radius: 5px; /* membulatkan sudut button */
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
 }
 
 form.tugas button.tambah:hover {
-    background-color: #0077b6;
+    background-color: #0056b3;
 }
 
 ul {
     list-style: none;
     padding: 0;
-    width: 50%;
+    width: 60%;
     margin: 30px auto;
+}
+
+li.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 16px;
+}
+
+.todo-item.task-selesai .todo-text {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    background-color: #007bff;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn.hapus {
+    background-color: #dc3545;
+}
+
+.btn.hapus:hover {
+    background-color: #b02a37;
+}
+
+.btn.disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 ul li {
@@ -139,12 +185,6 @@ ul li {
     align-items: center;
 }
 
-ul li.task-selesai {
-    text-decoration: line-through;
-    color: gray;
-    background-color: #d9d9d9;
-}
-
 ul li a {
     margin-left: 15px;
     color: #0077b6;
@@ -154,4 +194,17 @@ ul li a {
 
 ul li a:hover {
     text-decoration: underline;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-actions .btn:hover {
+    background-color: #0056b3;
+}
+
+.todo-actions .hapus:hover {
+    background-color: #b02a37;
 }
