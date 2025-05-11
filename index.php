@@ -56,12 +56,13 @@ if (isset($_GET['toggle'])) {
     </header>
 
     <h1 class="todo">To Do List</h1>
+    <!-- form tugas -->
     <form action="" class="tugas" method="post">
         <input type="text" name="tugas" placeholder="Tugas baru" required>
         <button type="submit" name="tambah" class="tambah">Tambah</button>
     </form>
 
-    <ul>
+    <ul class="todo">
     <?php foreach ($todos as $todo): ?> 
         <?php
         $status = trim(strtolower(str_replace("'", "", $todo['status'])));

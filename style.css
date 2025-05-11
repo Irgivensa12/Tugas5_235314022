@@ -1,41 +1,39 @@
 body {
-    background-image: url("asanoha-400px.png");
+    background-image: url("asanoha-400px.png"); /* memasukkan gambar background*/
 }
 
 h1 {
-    font-family: Sans-serif;
-    margin-top: 20px;
+    font-family: Sans-serif; /* mengatur font */
+    margin-top: 20px; /* menambah jarak atas */
 }
 
 form {
-    background-color: white;
-    max-width: 400px; /* mensetting lebar form */
-    padding: 20px; /* menambah jarak dalam form */
-    border-radius: 10px; /* membulatkan sudut form */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* menambah bayangan pada form */
-    margin: auto; /* memposisikan form di tengah halaman */
+    display: flex; /* menampilkan form dalam satu baris */
+    flex-direction: column; /* mengatur arah elemen form */
+    gap: 10px; /* jarak antar elemen form */
+    align-items: start; /* memposisikan elemen form ke kiri */
 }
 
-label {
-    display: block; /* menampilkan label dalam satu baris */
-    margin-bottom: 5px;
+form label {
+    font-weight: bold; /* mengatur ketebalan font */
 }
 
-input[type="text"], /* memilih semua elemen <input> yang bertipe text */
-input[type="password"] {
-  /* memilih semua elemen <input> yang bertipe password  */
-  width: 100%; /* mengatur lebar input menjadi 100% dari elemen induknya */
-  padding: 8px; /* menambah jarak dalam input */
-  box-sizing: border-box; /* mengatur ukuran elemen termasuk padding dan border */
+form input[type="text"], /* mengatur input text */
+form input[type="password"] { /* mengatur input password */
+    width: 40%; /* mengatur lebar input */
+    padding: 8px;  /* menambah padding */
+    margin-top: 5px; /* menambah jarak atas */
+    margin-bottom: 10px; /* menambah jarak bawah */
+    box-sizing: border-box; /* mengatur ukuran box */
 }
 
-button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px; /* membulatkan sudut button */
-    cursor: pointer;
+form button {
+    padding: 8px 16px;
+    background-color: dodgerblue; /* mengatur warna background button */
+    color: white; /* mengatur warna font button */
+    border: none; /* menghilangkan border */
+    border-radius: 5px; /* mengatur sudut button */
+    cursor: pointer; /* mengubah kursor saat hover */
 }
 
 button:hover {
@@ -82,19 +80,19 @@ h1.todo {
 }
 
 form.tugas {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    background-color: white;
+    display: flex; /* menampilkan form dalam satu baris */
+    justify-content: center; /* memposisikan form di tengah */
+    gap: 10px; /* jarak antar elemen form */
+    background-color: white; /* mengatur warna background form */
     padding: 20px;
     max-width: 600px;
     margin: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* mengatur sudut form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* menambah bayangan pada form */
 }
 
 form.tugas input[type="text"] {
-    flex: 1;
+    flex: 1; /* mengatur lebar input */
     padding: 10px;
     font-size: 16px;
 }
@@ -113,7 +111,7 @@ form.tugas button.tambah:hover {
     background-color: #0056b3;
 }
 
-ul {
+ul { 
     list-style: none;
     padding: 0;
     width: 60%;
@@ -174,7 +172,7 @@ li.todo-item {
     pointer-events: none;
 }
 
-ul li {
+ul.todo li {
     background-color: white;
     padding: 15px;
     border: 1px solid #ccc;
