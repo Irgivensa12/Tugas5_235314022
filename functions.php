@@ -90,7 +90,7 @@ return mysqli_affected_rows($db);
 function tambahTodo($user_id, $tugas) {
     global $db;
     $tugas = htmlspecialchars($tugas);
-    $query = "INSERT INTO todos (user_id, tugas, status) VALUES ($user_id, '$tugas', 'belum')"; // query untuk menambahkan data ke dalam tabel todos, 1 = belum selesai (setting default enum "belum")
+    $query = "INSERT INTO todos (user_id, tugas, status) VALUES ($user_id, '$tugas', 1)"; // query untuk menambahkan data ke dalam tabel todos, 1 = belum selesai (setting default enum "belum")
     mysqli_query($db, $query ); 
     return mysqli_affected_rows($db);
 }
