@@ -29,7 +29,7 @@ if(isset($_POST["register"])) {
 <body>
     <h1>Halaman Registrasi</h1>
 
-    <form action="" method="post">
+    <form action="" method="post" class="registrasi">
 <ul>
     <li>
         <label for="username">Username :</label>
