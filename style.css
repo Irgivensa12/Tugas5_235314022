@@ -2,32 +2,31 @@ body {
     background-image: url("asanoha-400px.png"); /* memasukkan gambar background*/
 }
 
-h1 {
+h1 { /* mengatur judul h1 global*/
     font-family: Sans-serif; /* mengatur font */
     margin-top: 20px; /* menambah jarak atas */
 }
 
-form {
+form.tugas { /* mengatur form tugas */
     display: flex; /* menampilkan form dalam satu baris */
-    flex-direction: column; /* mengatur arah elemen form */
-    gap: 10px; /* jarak antar elemen form */
-    align-items: start; /* memposisikan elemen form ke kiri */
+    flex-direction: row; /* mengatur arah elemen form */
+    align-items: center; /* memposisikan elemen form di tengah */
 }
 
-form label {
+form label { /* mengatur label global */
     font-weight: bold; /* mengatur ketebalan font */
 }
 
-form input[type="text"], /* mengatur input text */
-form input[type="password"] { /* mengatur input password */
+form input[type="text"], /* mengatur input text global */
+form input[type="password"] { /* mengatur input password  global*/
     width: 40%; /* mengatur lebar input */
     padding: 8px;  /* menambah padding */
     margin-top: 5px; /* menambah jarak atas */
     margin-bottom: 10px; /* menambah jarak bawah */
-    box-sizing: border-box; /* mengatur ukuran box */
+    box-sizing: border-box; /* mengatur ukuran box (lebar input sudah termasuk padding dan border, idak akan “melebar” lebih dari width yang ditentukan) */
 }
 
-form button {
+form button { /* mengatur button global */
     padding: 8px 16px;
     background-color: dodgerblue; /* mengatur warna background button */
     color: white; /* mengatur warna font button */
@@ -36,174 +35,175 @@ form button {
     cursor: pointer; /* mengubah kursor saat hover */
 }
 
-button:hover {
-  background-color: #0056b3; /* mengubah warna button saat di hover */
+button:hover { /* mengatur button saat di hover */
+    background-color: #0056b3; /* mengubah warna background button saat di hover */
+    background-color: #0056b3; /* mengubah warna button saat di hover */
 }
 
-a {
-  text-decoration: none; /* menghilangkan garis bawah pada link */
-  color: #007bff; /* mengatur warna link */
-  font-size: 18px; /* mengatur ukuran font link */
+a { /* mengatur link */
+    text-decoration: none; /* menghilangkan garis bawah pada link */
+    color: #007bff; /* mengatur warna link */
+    font-size: 18px; /* mengatur ukuran font link */
 }
 
-a:hover {
-  text-decoration: underline; /* menambah garis bawah pada link saat di hover */
+a:hover { /* mengatur link saat di hover */
+    text-decoration: underline; /* menambah garis bawah pada link saat di hover */
 }
 
-img {
+img { /* mengatur gambar */
     display: block; /* menampilkan gambar dalam satu baris */
     margin: 0 auto; /* memposisikan gambar di tengah halaman */
     padding-top: 30px; /* menambah jarak atas gambar */
-    width: 200px;
-    height: 150px;
+    width: 200px; /* mengatur lebar gambar */
+    height: 150px; /* mengatur tinggi gambar */
 }
 
-h2 {
-    font-family: Sans-serif;
-    margin-top: 20px;
+h2 { /* mengatur judul h2 global*/
+    font-family: Sans-serif; /* mengatur font */
+    margin-top: 20px; /* menambah jarak atas */
     text-align: center; /* memposisikan teks di tengah */
 }
-h3 {
-    font-family: Sans-serif;
-    margin-top: 20px;
+h3 { /* mengatur judul h3 global*/
+    font-family: Sans-serif; /* mengatur font */
+    margin-top: 20px; /* menambah jarak atas */
     text-align: center; /* memposisikan teks di tengah */
 }
 
-.logout {
-    display: block;
-    text-align: center;
-    margin: 10px auto;
+.logout { /* mengatur tombol logout */
+    display: block; /* menampilkan tombol logout dalam satu baris */
+    text-align: center; /* memposisikan teks di tengah */
+    margin: 10px auto; /* memposisikan tombol logout di tengah */
 }
 
-h1.todo {
-  text-align: center; /* memposisikan teks di tengah */
+h1.todo { /* mengatur judul h1 untuk todo */
+    text-align: center; /* memposisikan teks di tengah */
 }
 
-form.tugas {
+form.tugas { /* mengatur form tugas */
     display: flex; /* menampilkan form dalam satu baris */
     justify-content: center; /* memposisikan form di tengah */
     gap: 10px; /* jarak antar elemen form */
     background-color: white; /* mengatur warna background form */
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
+    padding: 20px; /* menambah padding pada form */
+    max-width: 600px; /* mengatur lebar maksimum form */
+    margin: auto; /* memposisikan form di tengah halaman */
     border-radius: 10px; /* mengatur sudut form */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* menambah bayangan pada form */
 }
 
-form.tugas input[type="text"] {
+form.tugas input[type="text"] { /* mengatur input text pada form tugas */
     flex: 1; /* mengatur lebar input */
     padding: 10px;
-    font-size: 16px;
+    font-size: 16px; /* mengatur ukuran font */
 }
 
-form.tugas button.tambah {
+form.tugas button.tambah { /* mengatur button tambah pada form tugas */
     padding: 10px 20px;
     font-size: 16px;
     background-color: #007bff;
     border: none;
     border-radius: 5px;
     color: white;
-    cursor: pointer;
+    cursor: pointer; /* mengubah kursor saat hover */
 }
 
-form.tugas button.tambah:hover {
+form.tugas button.tambah:hover { /* mengatur button tambah saat di hover */
     background-color: #0056b3;
 }
 
-ul { 
+ul {  /* mengatur list global*/
     list-style: none;
     padding: 0;
     width: 60%;
     margin: 30px auto;
 }
 
-li.todo-item {
+li.todo-item { /* mengatur list item todo */
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
     padding: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* mengatur border */
     margin-bottom: 10px;
     border-radius: 8px;
 }
 
-.todo-text {
-    flex: 1;
-    font-size: 16px;
+.todo-text { /* mengatur teks todo */
+    flex: 1; /* mengatur lebar teks */
+    font-size: 16px; 
 }
 
-.todo-item.task-selesai .todo-text {
-    text-decoration: line-through;
+.todo-item.task-selesai .todo-text { /* mengatur teks todo yang sudah selesai */
+    text-decoration: line-through; /* mengatur teks dicoret */
     color: gray;
 }
 
-.todo-actions {
-    display: flex;
-    gap: 10px;
+.todo-actions { /* mengatur aksi todo */
+    display: flex; /* menampilkan aksi dalam satu baris */
+    gap: 10px; /* jarak antar elemen aksi */
 }
 
-.btn {
+.btn { /* mengatur button global */
     padding: 6px 12px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 14px;
     color: white;
-    background-color: #007bff;
+    background-color: blue;
 }
 
-.btn:hover {
+.btn:hover { /* mengatur button saat di hover */
     background-color: #0056b3;
 }
 
-.btn.hapus {
+.btn.hapus { /* mengatur button hapus */
     background-color: #dc3545;
 }
 
-.btn.hapus:hover {
-    background-color: #b02a37;
+.btn.hapus:hover { /* mengatur button hapus saat di hover */
+    background-color: red;
 }
 
-.btn.disabled {
+.btn.disabled { /* mengatur button disabled */
     background-color: #ccc;
     color: #666;
     cursor: not-allowed;
-    pointer-events: none;
+    pointer-events: none; /* menghilangkan event pointer */
 }
 
-ul.todo li {
+ul.todo li { /* mengatur list item todo */
     background-color: white;
     padding: 15px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
     border-radius: 8px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* mengatur jarak antar elemen */
     align-items: center;
 }
 
-ul li a {
+ul li a { /* mengatur link dalam list */
     margin-left: 15px;
     color: #0077b6;
     text-decoration: none;
     font-weight: bold;
 }
 
-ul li a:hover {
+ul li a:hover { /* mengatur link saat di hover */
     text-decoration: underline;
 }
 
-.todo-actions {
+.todo-actions { /* mengatur aksi todo */
     display: flex;
-    gap: 10px;
+    gap: 10px; /* jarak antar elemen aksi */
 }
 
-.todo-actions .btn:hover {
+.todo-actions .btn:hover { /* mengatur button aksi saat di hover */
     background-color: #0056b3;
 }
 
-.todo-actions .hapus:hover {
+.todo-actions .hapus:hover { /* mengatur button hapus saat di hover */
     background-color: #b02a37;
 }
 
@@ -220,26 +220,26 @@ form.registrasi {
 
 form.registrasi ul {
     list-style: none; /* menghilangkan bullet point pada list */
-    padding: 0;
-    margin: 0;
+    padding: 0; /* menghilangkan padding pada list */
+    margin: 0; /* menghilangkan margin pada list */
     display: flex; /* menampilkan list dalam satu baris */
     flex-direction: column; /* mengatur arah elemen list */
     gap: 15px; /* jarak antar elemen list */
 }
 
-form.registrasi li {
+form.registrasi li { /* mengatur list item */
     display: flex; /* menampilkan list dalam satu baris */
     flex-direction: column; /* mengatur arah elemen list */
 }
 
-form.registrasi label {
+form.registrasi label { /* mengatur label */
     margin-bottom: 5px; /* menambah jarak bawah label */
     font-size: 14px; /* ukuran font label */
     font-weight: 600; /* mengatur ketebalan font label */
 }
 
-form.registrasi input[type="text"],
-form.registrasi input[type="password"] {
+form.registrasi input[type="text"], /* mengatur input text */
+form.registrasi input[type="password"] { /* mengatur input password */
     padding: 10px; 
     font-size: 16px; 
     border-radius: 5px; /* mengatur sudut input */ 
@@ -247,7 +247,7 @@ form.registrasi input[type="password"] {
     color:black;
 }
 
-form.registrasi button[name="register"] {
+form.registrasi button[name="register"] { /* mengatur button register */
     padding: 12px;
     font-size: 16px;
     background-color: #007bff;
@@ -258,6 +258,6 @@ form.registrasi button[name="register"] {
     cursor: pointer;
 }
 
-form.registrasi button[name="register"]:hover {
+form.registrasi button[name="register"]:hover { /* mengatur button register saat di hover */
     background-color: #0056b3;
 }
