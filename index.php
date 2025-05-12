@@ -64,18 +64,26 @@ if (isset($_GET['toggle'])) {
 
     <ul class="todo">
     <?php foreach ($todos as $todo): ?> 
+        <!-- loop untuk menampilkan semua tugas -->
         <?php
         $status = trim(strtolower(str_replace("'", "", $todo['status'])));
+        // membersihkan status dari karakter yang tidak diinginkan
         ?>
         <li class="todo-item <?= $status === 'selesai' ? 'task-selesai' : '' ?>">
+            <!-- menampilkan status tugas -->
             <span class="todo-text"><?= htmlspecialchars($todo['tugas']) ?></span>
+            <!-- menampilkan tugas -->
             <div class="todo-actions">
                 <?php if ($status === 'selesai'): ?>
+                    <!-- jika status selesai, tampilkan tombol disabled -->
                     <a class="btn selesai disabled">Selesai</a>
+                    <!-- setting tombol disabled agar tidak bisa diklik -->
                 <?php else: ?>
                     <a href="?toggle=<?= $todo['id'] ?>" class="btn selesai">Selesai</a>
+                    <!--jika status belum selesai, tampilkan tombol selesai -->
                 <?php endif; ?>
                 <a href="?hapus=<?= $todo['id'] ?>" class="btn hapus">Hapus</a>
+                <!-- tombol hapus untuk menghapus tugas -->
             </div>
         </li>
     <?php endforeach; ?>
