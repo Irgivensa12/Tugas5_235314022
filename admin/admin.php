@@ -1,8 +1,8 @@
 <?php 
 session_start(); // memulai session
-if(!isset($_SESSION["login"])) { // jika session login belum ada
-    header("Location: ../login.php"); // redirect ke halaman login.php
-    exit; // menghentikan script
+if (!isset($_SESSION["login"]) || $_SESSION["username"] !== 'admin') { // jika session login belum ada atau username bukan admin
+    header("Location: ../login.php"); // redirect ke halaman login
+    exit;
 }
 require '../functions.php'; // memanggil file functions.php untuk digunakan di halaman admin
 $users = query("SELECT * FROM users"); // query untuk menampilkan data dari tabel user

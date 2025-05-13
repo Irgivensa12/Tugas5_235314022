@@ -38,18 +38,26 @@ if(isset($_POST["login"])) {
     if(password_verify($password, $row["password"])){ // untuk cek sebuah string sama atau tidak dengan hash password yang ada di database
         
         // set session
-        $_SESSION["login"] = true; // cek session login di tiap halaman
-        //$loginSuccess = true; // jika login berhasil, set session login menjadi true
-        $_SESSION["user_id"] = $row["id"];
+        $_SESSION["login"] = true;
+        $_SESSION["user_id"] = $row["id"]; // simpan id user ke session
+        $_SESSION["username"] = $row["username"]; // simpan username juga
 
         // cek remember me
-        if(isset($_POST["remember"])) { // jika checkbox remember me dicentang
-            // buat cookie
-            setcookie('id', $row['id'], time() + 60); // buat cookie dengan nama id, isi id user, dan masa berlaku 1 menit
-            setcookie('key', hash('sha256', $row['username']), time() + 60); // buat cookie dengan nama dg algo sha256 key, isi hash dari username user, dan masa berlaku 1 menit
+        if(isset($_POST["remember"])) {
+            setcookie('id', $row['id'], time() + 60);
+            setcookie('key', hash('sha256', $row['username']), time() + 60);
         }
-        header("Location: index.php"); // jika password benar, redirect ke halaman index
-    exit; // hentikan script
+
+        // arahkan admin ke halaman khusus
+        if ($row['username'] === 'admin') {
+            header("Location: admin/admin.php");
+            exit;
+        }
+
+        // selain admin ke index.php
+        header("Location: index.php");
+        exit; // hentikan script
+
     } 
 }
     $eror = true; // jika username atau password salah, tampilkan pesan error
