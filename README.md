@@ -42,5 +42,35 @@ Ada beberapa tahap dalam aplikasi ini:
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/0aadf98825d534d37fa0a6acd42dd0889685ce66/Screenshot/Index%20Hapus%20Tugas.png)
                                                                 (Tugas 1 hilang karena user klik button hapus)
 - Admin
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Login%20Admin.png)
+                                                                (Login sebagai admin)
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Halaman%20Admin.png)
+                                                                (Admin akan diarahkan ke halaman admin)
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Tambah%20User%20Admin.png)
+                                                                (Admin menambahkan admin)
+  
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Sukses%20Tambah%20Admin.png)
+                                                                (Admin sukses menambahkan user baru)
+
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Edit%20User%20Admin.png)
+                                                                (Admin mengedit password username "Ariel")
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Edit%20Sukses%20Admin.png)
+                                                                (Edit user sukses)
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Update%20Database%20Admin.png)
+                                                                (Update database pasca edit username "Ariel")
+  
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Konfir%20Hapus%20Admin.png)
+                                                                (Ketika Admin mengklik button hapus pada salah satu user)
+
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Sukses%20Hapus%20Admin.png)
+                                                                (Admin sukses hapus salah satu user)
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Edit%20Sukses%20Admin.png)
+                                                                (Edit user sukses)
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Halaman%20Admin.png)
+                                                                (Update database pasca delete username "Ariel")
+  
 - Cookie
+
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Cookie%20Sukses.png)
+                                                                (Program berhasil menangkap user yg mencentang "Remember Me")
 - Skematik Database user
