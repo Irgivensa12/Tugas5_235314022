@@ -4,13 +4,13 @@
 
 Program website "To do List" yang bisa menambahkan to do list seseorang, mencoret to do list jika sudah selesai, dan menghapus to do list jika sudah tidak perlu.
 
-Ada 4 tahap dalam aplikasi ini:
+Ada beberapa tahap dalam aplikasi ini:
 
 - Registrasi (untuk user yg belum punya akun)
 - Login
 - Tambah, Hapus, Selesai to do list
 - Logout
-- ✨Magic ✨
+- CRUD user (jika login sebagai admin)
 
 ## Halaman-halaman pada Program
 
@@ -21,6 +21,7 @@ Ada 4 tahap dalam aplikasi ini:
                                                                 (User melakukan registrasi)
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/f4b2f75d6c0e2a9223a2738464ce960e8607b850/Screenshot/Registrasi%20Sukses.png)
                                                                 (Registrasi sukses)
+  
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/0aadf98825d534d37fa0a6acd42dd0889685ce66/Screenshot/Register%20Gagal.png)
                                                                 (Registrasi gagal karena konfirmasi password tidak sama dengan password)
 - Login
