@@ -1,11 +1,26 @@
 <?php 
 session_start(); // memulai session agar bisa menggunakan session
+require 'functions.php';
+
+// cek cookie
+if(isset($_COOKIE['id']) && isset($_COOKIE['key'])) { // jika cookie id dan key ada
+    $id = $_COOKIE['id']; // ambil cookie id
+    $key = $_COOKIE['key']; // ambil cookie key
+
+    // ambil username berdasarkan id
+    $result = mysqli_query($db, "SELECT username FROM users WHERE id = $id"); // query untuk menampilkan data dari tabel user berdasarkan id
+    $row = mysqli_fetch_assoc($result); // ambil data dari database
+
+    // cek cookie key dan username
+    if($key === hash('sha256', $row['username'])) { // jika cookie key sama dengan hash dari username (key itu username yg diacak)
+        $_SESSION['login'] = true; // set session login menjadi true
+    }
+}
 
 if(isset($_SESSION["login"])  && isset($_SESSION["user_id"])) { // jika session login sudah ada
     header("Location: index.php"); // redirect ke halaman admin
     exit; // hentikan script
 }
-require 'functions.php';
 
 // cek apakah tombol login sudah ditekan atau belum
 if(isset($_POST["login"])) {
@@ -26,6 +41,13 @@ if(isset($_POST["login"])) {
         $_SESSION["login"] = true; // cek session login di tiap halaman
         //$loginSuccess = true; // jika login berhasil, set session login menjadi true
         $_SESSION["user_id"] = $row["id"];
+
+        // cek remember me
+        if(isset($_POST["remember"])) { // jika checkbox remember me dicentang
+            // buat cookie
+            setcookie('id', $row['id'], time() + 60); // buat cookie dengan nama id, isi id user, dan masa berlaku 1 menit
+            setcookie('key', hash('sha256', $row['username']), time() + 60); // buat cookie dengan nama dg algo sha256 key, isi hash dari username user, dan masa berlaku 1 menit
+        }
         header("Location: index.php"); // jika password benar, redirect ke halaman index
     exit; // hentikan script
     } 
@@ -63,6 +85,10 @@ if(isset($_POST["login"])) {
         <li>
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" required>
+        </li>
+        <li>
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Remember Me</label>
         </li>
         <li>
             <button type="submit" name="login">Submit</button>
