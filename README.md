@@ -31,10 +31,10 @@ Ada beberapa tahap dalam aplikasi ini:
                                                                 (User melakukan login)
   
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/0aadf98825d534d37fa0a6acd42dd0889685ce66/Screenshot/Gagal%20Login.png)
-                                                                (Login gagal karena user memasukkan password yang salah)                                             
+                                                                (Saat login gagal karena user memasukkan password yang salah)                                             
 - Index
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/0aadf98825d534d37fa0a6acd42dd0889685ce66/Screenshot/Index%20User%20non%20Admin.png)
-                                                                (Tampilan awal index/ halaman utama)
+                                                                (User akan diarahkan ke tampilan awal index/ halaman utama jika login sukses)
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/0aadf98825d534d37fa0a6acd42dd0889685ce66/Screenshot/Index%20Tambah%20Tugas.png)
                                                                 (User memasukkan tugas dan mengklik button tambah)
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/0aadf98825d534d37fa0a6acd42dd0889685ce66/Screenshot/Index%20Selesai%20Tugas.png)
@@ -53,14 +53,14 @@ Ada beberapa tahap dalam aplikasi ini:
                                                                 (Admin sukses menambahkan user baru)
 
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Edit%20User%20Admin.png)
-                                                                (Admin mengedit password username "Ariel")
+                                                                (Admin mengklik link edit untuk mengedit password username "Ariel")
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Edit%20Sukses%20Admin.png)
                                                                 (Edit user sukses)
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Update%20Database%20Admin.png)
                                                                 (Update database pasca edit username "Ariel")
   
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Konfir%20Hapus%20Admin.png)
-                                                                (Ketika Admin mengklik button hapus pada salah satu user)
+                                                                (Ketika Admin mengklik link hapus pada salah satu user)
 
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Sukses%20Hapus%20Admin.png)
                                                                 (Admin sukses hapus salah satu user)
