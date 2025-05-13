@@ -15,6 +15,13 @@ Ada 4 tahap dalam aplikasi ini:
 ## Halaman-halaman pada Program
 
 - Registrasi
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/f4b2f75d6c0e2a9223a2738464ce960e8607b850/Screenshot/Registrasi%20Kosongan.png)
+  (Tampilan awawl)
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/f4b2f75d6c0e2a9223a2738464ce960e8607b850/Screenshot/Registrasi%20w%20User.png)
+  (User melakukan registrasi)
+  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/f4b2f75d6c0e2a9223a2738464ce960e8607b850/Screenshot/Registrasi%20Sukses.png)
+  (Registrasi Sukses)
+  
 - Login
 - Index
 - Admin
