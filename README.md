@@ -99,10 +99,6 @@ Ada beberapa tahap dalam aplikasi ini:
   
                                                                 (Admin sukses hapus salah satu user)
   
-  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Edit%20Sukses%20Admin.png)
-  
-                                                                (Edit user sukses)
-  
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Halaman%20Admin.png)
   
                                                                 (Update database pasca delete username "Ariel")
@@ -125,10 +121,12 @@ CREATE TABLE users (
 );
 
  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/e1b35a9a8013d31dba219213d3b163342f2b4c48/Screenshot/Struktur%20tabel%20user.png)
+ 
                                                                 (Struktur Tabel user)
 
 
  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/e1b35a9a8013d31dba219213d3b163342f2b4c48/Screenshot/Isi%20Tabel%20User.png)
+ 
                                                                 (Isi Tabel user)
 
 Tabel todos
@@ -143,9 +141,11 @@ CREATE TABLE todos (
 );
 
  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/e1b35a9a8013d31dba219213d3b163342f2b4c48/Screenshot/Struktur%20tabel%20todo.png)
+ 
                                                                 (Struktur Tabel todos)
 
 
  ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/e1b35a9a8013d31dba219213d3b163342f2b4c48/Screenshot/Isi%20Tabel%20todo.png)
+ 
                                                                 (Isi Tabel todos)
 
