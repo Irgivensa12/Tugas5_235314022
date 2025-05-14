@@ -73,4 +73,39 @@ Ada beberapa tahap dalam aplikasi ini:
 
   ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/26b22b79929b99a73b713e9a7e6aba7e9e569da2/Screenshot/Cookie%20Sukses.png)
                                                                 (Program berhasil menangkap user yg mencentang "Remember Me")
-- Skematik Database user
+- Skematik Database:
+  
+Tabel users
+
+CREATE TABLE users (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+ ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/e1b35a9a8013d31dba219213d3b163342f2b4c48/Screenshot/Struktur%20tabel%20user.png)
+                                                                (Struktur Tabel user)
+
+
+ ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/e1b35a9a8013d31dba219213d3b163342f2b4c48/Screenshot/Isi%20Tabel%20User.png)
+                                                                (Isi Tabel user)
+
+Tabel todos
+
+CREATE TABLE todos (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    user_id INT(11) NOT NULL,
+    tugas TEXT NOT NULL,
+    status ENUM('belum', 'selesai') NOT NULL DEFAULT 'belum',
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+ ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/e1b35a9a8013d31dba219213d3b163342f2b4c48/Screenshot/Struktur%20tabel%20todo.png)
+                                                                (Struktur Tabel todos)
+
+
+ ![image alt](https://github.com/Irgivensa12/Tugas5_235314022/blob/e1b35a9a8013d31dba219213d3b163342f2b4c48/Screenshot/Isi%20Tabel%20todo.png)
+                                                                (Isi Tabel todos)
+
